@@ -11,6 +11,10 @@ app.use(express.json());
 app.use(cors());
 
 // Sample endpoint to get data from PostgreSQL
+app.get('/test', async(req, res) => {
+    res.send('Hello world, this is node server reporting');
+})
+
 app.get('/api/users', async (req, res) => {
   try {
     const result = await db.query('SELECT * FROM users');  // Example query to fetch users
