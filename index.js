@@ -19,7 +19,7 @@ app.get('/test', async(req, res) => {
 
 app.get('/api/users', async (req, res) => {
   try {
-    const result = await db.query('SELECT * FROM users');  // Example query to fetch users
+    const result = await db.query('SELECT * FROM data');  // Example query to fetch users
     res.json(result.rows);  // Send the result to the frontend
   } catch (error) {
     console.error('Error fetching data:', error);
