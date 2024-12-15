@@ -12,7 +12,9 @@ app.use(cors());
 
 // Sample endpoint to get data from PostgreSQL
 app.get('/test', async(req, res) => {
-    res.send('Hello world, this is node server reporting');
+    res.json({
+      "message" : "Hello world",
+    });
 })
 
 app.get('/api/users', async (req, res) => {
