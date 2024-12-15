@@ -29,9 +29,9 @@ app.get('/api/users', async (req, res) => {
 
 // Endpoint to add a new user (for example)
 app.post('/api/users', async (req, res) => {
-  const { name, email } = req.body;
+  const { username, password } = req.body;
   try {
-    const result = await db.query('INSERT INTO data (name, email) VALUES ($1, $2) RETURNING *', [name, email]);
+    const result = await db.query('INSERT INTO data (name, email) VALUES ($1, $2) RETURNING *', [username, password]);
     res.json(result.rows[0]);
   } catch (error) {
     console.error('Error inserting data:', error);
