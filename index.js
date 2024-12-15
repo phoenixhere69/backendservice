@@ -31,7 +31,7 @@ app.get('/api/users', async (req, res) => {
 app.post('/api/users', async (req, res) => {
   const { name, email } = req.body;
   try {
-    const result = await db.query('INSERT INTO users (name, email) VALUES ($1, $2) RETURNING *', [name, email]);
+    const result = await db.query('INSERT INTO data (name, email) VALUES ($1, $2) RETURNING *', [name, email]);
     res.json(result.rows[0]);
   } catch (error) {
     console.error('Error inserting data:', error);
